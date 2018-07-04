@@ -1,6 +1,55 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
+<div class = "banner">
   <h1>
-    {{ title }}!
+    {{ name }}!
   </h1>
+  <p>
+    {{ email }}
+  </p>
 
+  <a href="{{ website }}" target="_blank">
+    visita mi sitio web!!!!
+  </a>
+
+  <button (click)="toggleHobbies()"class = "btn" >
+    {{showHobbies ? 'Hide hobbies' : 'Show hobbies'}}
+  </button>
+
+  <div *ngIf="showHobbies" class="component2">
+      <h2>Hobbies</h2>
+      <ul>
+        <li *ngFor = "let hobby of hobbies">
+          {{hobby}}
+        </li>
+      </ul>
+
+      <form (submit)="newHobby(hobby)">
+        
+        <input #hobby type="text" name="hobby" placeholder="hobby">
+      </form>
+  </div>
+</div>
+
+<div class = "banner">
+    <h3>Modifica el contenido. </h3>
+    <label for="name">Name: </label>
+    <input 
+    type="text" 
+    name="name" 
+    placeholder="change the name"
+    [(ngModel)]="name">
+
+    <label for="email">Email: </label>
+    <input 
+    type="text" 
+    name="email" 
+    placeholder="change the email"
+    [(ngModel)]="email">
+
+    <label for="website">Website: </label>
+    <input 
+    type="text" 
+    name="website" 
+    placeholder="change the website"
+    [(ngModel)]="website">
+</div>

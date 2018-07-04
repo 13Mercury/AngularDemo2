@@ -1,0 +1,18 @@
+.banner{
+    background-color: brown;
+    color: white;
+}
+
+.component2{
+    background-color: burlywood;
+    color: white;
+    padding: 30px;
+}
+
+.btn{
+    padding: 20px;
+    color: white;
+    background-color: gray;
+    display: block;
+    margin: 3px;
+}
